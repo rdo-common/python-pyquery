@@ -2,7 +2,7 @@
  
 Name:           python-%{real_name}
 Version:        0.6.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A jQuery-like library for python
 Group:          Development/Libraries
 License:        BSD
@@ -44,6 +44,9 @@ done
 %{python_sitelib}/pyquery*.egg-info/
 
 %changelog
+* Sat Jan 14 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.6.1-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+
 * Fri Feb 25 2011 Brendan Jones <brendan DOT jones DOT it AT gmail DOT com> 0.6.1-3
 - Dropped BuildRoot and corrected spelling
 
