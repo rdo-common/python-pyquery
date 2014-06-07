@@ -2,7 +2,7 @@
  
 Name:           python-%{real_name}
 Version:        1.2.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A jQuery-like library for python
 Group:          Development/Libraries
 License:        BSD
@@ -41,6 +41,9 @@ XML and HTML manipulation.
 %{python_sitelib}/pyquery*.egg-info/
 
 %changelog
+* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.2.4-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
 * Mon Aug 05 2013 Matěj Cepl <mcepl@redhat.com> - 1.2.4-1
 - Update to 1.2.4 (RHBZ#980856)
 - Add missing Requires:
