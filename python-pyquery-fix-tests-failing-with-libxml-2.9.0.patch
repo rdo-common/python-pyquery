@@ -1,0 +1,33 @@
+From 531fed28dcb1e24906ffcbeee91470e699a40d52 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Johan=20Bergstr=C3=B6m?= <bugs@bergstroem.nu>
+Date: Tue, 15 Apr 2014 15:32:44 +1000
+Subject: [PATCH] Fix whitespace issue in test_pyquery.py
+
+This resolves two broken tests for me: test_replaceWith,
+test_replaceWith_with_function
+---
+ tests/test_pyquery.py | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/tests/test_pyquery.py b/tests/test_pyquery.py
+index 91ebf63..eec2507 100644
+--- a/tests/test_pyquery.py
++++ b/tests/test_pyquery.py
+@@ -379,13 +379,11 @@ def test_class(self):
+ 
+ class TestHTMLParser(TestCase):
+     xml = "<div>I'm valid XML</div>"
+-    html = '''
+-    <div class="portlet">
++    html = '''<div class="portlet">
+       <a href="/toto">TestimageMy link text</a>
+       <a href="/toto2">imageMy link text 2</a>
+       Behind you, a three-headed HTML&dash;Entity!
+-    </div>
+-    '''
++    </div>'''
+ 
+     def test_parser_persistance(self):
+         d = pq(self.xml, parser='xml')
+-- 
+1.9.3
