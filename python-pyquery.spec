@@ -14,6 +14,7 @@ Source0:        https://pypi.python.org/packages/source/p/pyquery/pyquery-1.2.8.
 #  libxml >= 2.9.0
 #  https://github.com/gawel/pyquery/pull/63
 Patch0:         python-pyquery-fix-tests-failing-with-libxml-2.9.0.patch
+Patch1:         python-pyquery-skip-test-requiring-net-connection.patch
 
 BuildArch:      noarch
 BuildRequires:  python-devel, python-setuptools
@@ -62,7 +63,10 @@ XML and HTML manipulation.
 
 %prep
 %setup -qn %{real_name}-%{version}
+
 %patch0 -p1
+%patch1 -p0
+
 %if 0%{?with_python3}
     rm -rf %{py3dir}
     cp -a . %{py3dir}

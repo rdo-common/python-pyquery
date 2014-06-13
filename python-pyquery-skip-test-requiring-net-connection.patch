@@ -1,0 +1,18 @@
+--- tests/test_pyquery.py.orig	2014-06-13 14:26:55.730149027 +0200
++++ tests/test_pyquery.py	2014-06-13 14:27:10.159132595 +0200
+@@ -11,6 +11,7 @@
+ from pyquery.ajax import PyQuery as pqa
+ from webtest import http
+ from webtest.debugapp import debug_app
++from nose.tools import nottest
+ from .apps import application
+ from .apps import secure_application
+ from .compat import PY3k
+@@ -503,6 +504,7 @@
+ 
+ class TestWebScrappingEncoding(TestCase):
+ 
++    @nottest
+     def test_get(self):
+         if not HAS_REQUEST:
+             return
