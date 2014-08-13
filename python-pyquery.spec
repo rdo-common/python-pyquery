@@ -1,6 +1,8 @@
-%global real_name pyquery
+%if 0%{fedora}
 %global with_python3 1
- 
+%endif
+%global real_name pyquery
+
 Name:           python-%{real_name}
 Version:        1.2.8
 Release:        2%{?dist}
