@@ -1,11 +1,11 @@
-%if 0%{fedora}
+%if 0%{?fedora}
 %global with_python3 1
 %endif
 %global real_name pyquery
 
 Name:           python-%{real_name}
 Version:        1.2.8
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A jQuery-like library for python
 Group:          Development/Libraries
 License:        BSD
@@ -107,12 +107,17 @@ nosetests
 %{python_sitelib}/pyquery/
 %{python_sitelib}/pyquery*.egg-info/
 
+%if 0%{?with_python3}
 %files -n python3-pyquery
 %doc CHANGES.rst README.rst
 %{python3_sitelib}/pyquery/
 %{python3_sitelib}/pyquery*.egg-info/
+%endif
 
 %changelog
+* Thu Aug 14 2014 Ralph Bean <rbean@redhat.com> - 1.2.8-3
+- Modernize python3 conditional.
+
 * Fri Jun 13 2014 Bohuslav Kabrda <bkabrda@redhat.com> - 1.2.8-2
 - Enable tests during build, add proper dependencies for them.
 
