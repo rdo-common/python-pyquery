@@ -5,7 +5,7 @@
 
 Name:           python-%{real_name}
 Version:        1.2.8
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A jQuery-like library for python
 Group:          Development/Libraries
 License:        BSD
@@ -94,6 +94,7 @@ XML and HTML manipulation.
 %{__python} setup.py install -O1 --skip-build  --root %{buildroot}
 
 %check
+%if 0%{?fedora}
 %if 0%{?with_python3}
     pushd %{py3dir}
     nosetests-%{python3_version}
@@ -101,6 +102,7 @@ XML and HTML manipulation.
 %endif # with_python3
 
 nosetests
+%endif
 
 %files
 %doc CHANGES.rst README.rst
@@ -115,6 +117,9 @@ nosetests
 %endif
 
 %changelog
+* Thu Sep 04 2014 Ralph Bean <rbean@redhat.com> - 1.2.8-4
+- Disable tests for epel.
+
 * Thu Aug 14 2014 Ralph Bean <rbean@redhat.com> - 1.2.8-3
 - Modernize python3 conditional.
 
