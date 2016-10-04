@@ -22,6 +22,7 @@ BuildArch:      noarch
 BuildRequires:  python-devel, python-setuptools
 
 # test deps
+%if 0%{?fedora}
 BuildRequires:  python-beautifulsoup
 BuildRequires:  python-cssselect
 BuildRequires:  python-lxml >= 2.1
@@ -30,6 +31,7 @@ BuildRequires:  python-requests
 BuildRequires:  python-restkit
 BuildRequires:  python-webob
 BuildRequires:  python-webtest
+%endif
 
 Requires:       python-lxml >= 2.1
 Requires:       python-cssselect
